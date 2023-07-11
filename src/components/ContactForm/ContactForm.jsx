@@ -4,40 +4,42 @@ import { Component } from 'react';
 
 export class ContactForm extends Component {
   state = {
-    name: ' ',
-    number: ' ',
+    name: '',
+    number: '',
   };
 
-  handleSubmitContact = event => {
+  handleSubmitContact = e => {
     const { name, number } = this.state;
-    event.preventDefault();
+    e.preventDefault();
+    if (!name.trim() || !number.trim()) {
+      alert('Fill all fields');
+      return;
+    }
     // const form = e.currentTarget
     // const name = e.currentTarget.elements.name.value.trim();
     // const number = e.currentTarget.elements.number.value.trim();
 
     const newContact = {
       id: nanoid(),
-      name,
-      number,
+      name: name.trim(),
+      number: number.trim(),
     };
-    this.props.onSubmit(newContact);
+    this.props.onFormSubmit(newContact);
     this.reset();
   };
-  
+
   reset = () => {
     this.setState({
       name: ' ',
       number: ' ',
-    })
-  }
-
-  nameChange = event =>{
-    const { name, value } = event.currentTarget;
-
-    this.setState({ [name]: value });
-
+    });
   };
 
+  nameChange = e => {
+    const { name, value } = e.currentTarget;
+
+    this.setState({ [name]: value });
+  };
 
   render() {
     const { name, number } = this.state;
@@ -68,8 +70,13 @@ export class ContactForm extends Component {
             value={number}
           />
         </label>
-        <button type='submit'>Add contact</button>
+        <button type="submit">Add contact</button>
       </form>
     );
   }
 }
+
+ContactForm.propTypes = {
+ onFormSubmit: PropTypes.func.isRequired,
+
+  };

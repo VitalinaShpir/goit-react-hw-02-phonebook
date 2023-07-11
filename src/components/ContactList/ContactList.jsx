@@ -1,31 +1,29 @@
 import PropTypes from 'prop-types';
 import ContactItem from '../ContactItem/ContactItem';
 
-export const ContactList = ({SavedContacts}) => {
+export const ContactList = ({contacts, onDeleteContact }) => {
 
   return (
     <ul>
-      {SavedContacts.length !== 0 ? (
-        SavedContacts.map(({id, name, number}) => {
+       { contacts.map(({id, name, number}) => {
           return (
             <ContactItem
               key={id}
               id={id}
               name={name}
               number={number}
+              onDeleteContact={onDeleteContact}
             />
           );
-        })
-      ) : (
-        <li>Not found name</li>
-      )}
+        })}
     </ul>
   );
 }
 ContactList.propTypes = {
-  SavedContacts: PropTypes.arrayOf(
+  contacts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-    })
-  ),
+    }).isRequired
+  ).isRequired,
+ 
 };

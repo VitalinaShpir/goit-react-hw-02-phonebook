@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types';
 import css from './ContactItem.module.css';
+import { RiDeleteBinLine } from 'react-icons/ri';
 
 const ContactItem = ({id, name, number, onDeleteContact}) => {
   return (
     <li className={css.contactListItem} >
-      <span className={css.contactItem} >{name}:</span>
-      <span className={css.contactItem} >{number}</span>
+      <span className={css.contactItem} >{name} : {number}</span>
+    
       <button
       className={css.deleteBtn}
         type="button"
         onClick={() => onDeleteContact(id)}
       >
-        x
+        <RiDeleteBinLine/>
       </button>
     </li>
   );

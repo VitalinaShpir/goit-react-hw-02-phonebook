@@ -22,12 +22,9 @@
   box-shadow: inset 0 5px 15px 4px rgba(191, 0, 244, 0.2);
 }
 
-.formInputBox {
-  /* position: relative; */
-}
+
 
 .formInputTxt {
-  /* position: absolute; */
   font-size: 18px;
   padding: 4px 0;
 }
@@ -36,6 +33,9 @@
   width: 50%;
   padding: 5px 20px;
   margin: 0 auto;
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(77, 0, 95);
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 5px;

@@ -61,7 +61,7 @@ export class App extends Component {
             onDeleteContact={this.onDeleteContact}
           />
         )}
-        {contacts.length === 0 && <p>Not found name</p>}
+        {contacts.length === 0 && <p>There is no names yet</p>}
       </div>
     );
   }

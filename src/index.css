@@ -69,6 +69,7 @@ ul {
   border: 2px solid #70009296;
   border-radius: 10px;
   width: 400px;
+  height: 540px;
   padding: 40px 25px;
   background: radial-gradient(ellipse at top, #c49ed59b, transparent),
     radial-gradient(ellipse at bottom, #8555bb9b, transparent);
@@ -132,4 +133,16 @@ h1 {
     filter: blur(0);
     opacity: 1;
   }
+}
+
+
+h2{
+  margin: 20px auto 20px auto;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 32px;
+  color: rgb(77, 0, 95);
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-shadow: 6px 3px #ffffffa7;
 }
